@@ -3,14 +3,16 @@ pipeline {
 
     stages {
         stage('checkout'){
-            stpes{
+            steps{
                 checkout scm
                 cleanWs()
                 sh 'git clone https://github.com/piotrowsianko/testing-jenkins.git .'
             }
         }
         stage('test'){
-            sh 'echo Tests'
+            steps{
+                sh 'echo Tests'
+            }
         }
     }
 }    
