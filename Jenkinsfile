@@ -12,9 +12,5 @@ pipeline {
         stage('test'){
             sh 'echo Tests'
         }
-        }
     }
-    
-
-
-}
+}    
