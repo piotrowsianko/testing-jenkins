@@ -1,6 +1,8 @@
-provider "google" {
-  project     = "My test project owspio"
-  region      = "europe-central2-a"
-
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+      version = "3.85.0"
+    }
+  }
 }
-
