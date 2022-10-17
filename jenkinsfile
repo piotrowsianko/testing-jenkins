@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('terraform'){
+            when {
+                branch 'main'
+            }
+            tools {
+                terraform 'tf1.2.6'
+                dockerTool 'docker19.3'
+            }
+            steps{
+                sh 'terraform init'
+            }
+        }
+    }
+    
+
+
+}
