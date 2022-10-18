@@ -21,5 +21,14 @@ pipeline {
                 sh 'terraform apply --auto-approve'
             }
         }
+        stage('Destroy environment to free up space on GCP'){
+            steps {
+                input message: 'Confirm extinction?', ok: 'Yes'
+                sh '''
+                terraform init
+                terraform destroy -auto-approve
+                '''
+            }
+        }
     }
 }    
