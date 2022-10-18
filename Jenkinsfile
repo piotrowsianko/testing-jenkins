@@ -14,5 +14,10 @@ pipeline {
                 sh 'echo Tests'
             }
         }
+        stage('Terraform init'){
+            steps{
+                sh 'terraform init'
+            }
+        }
     }
 }    
